@@ -23,23 +23,24 @@ const change = evt => {
                 value ={values.username}
                 />
             </label>
-            <label htmlFor='email'>Email
+            <label htmlFor='email'> Email
                 <input
                     id='email'
                     type='email'
                     name='email'
+                    onChange={change}
                     value={values.email}
                 />
             </label>
-            <label htmlFor='role'>Role
+            <label htmlFor='role'> Role
             <select id='role' name='role' onChange={change} value={values.role}>
             <option value=''>Choose a Role</option>
-            <option value='data-admin'>Database Administrator</option>
-            <option value='engi'>Software Engineer</option>
-            <option value='web'>Web Development</option>
-            <option value='science'>Data Science</option>
-            <option value='backend'>Backend Developer</option>
-            <option value='frontend'>Frontend Developer</option>
+            <option value='Database Administrator'>Database Administrator</option>
+            <option value='Software Engineer'>Software Engineer</option>
+            <option value='Web Developer'>Web Developer</option>
+            <option value='Data Scientist'>Data Science</option>
+            <option value='Backend Engineer'>Backend Engineer</option>
+            <option value='Frontend Engineer'>Frontend Engineer</option>
             </select>
             </label>
             <div className='submit'>

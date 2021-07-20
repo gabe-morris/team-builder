@@ -1,7 +1,8 @@
-import logo from './logo.svg';
+
 import './App.css';
-import React, {useState,useEffect} from 'react'
+import React, {useState} from 'react'
 import Form from './Form'
+import Member from './Member'
 const initialFormValues = {
   username: '',
   email: '',
@@ -22,6 +23,10 @@ function App() {
       role: formValues.role.trim()
     }
     if (!newMember.username || !newMember.email || !newMember.role ) return
+    const mem = newMember
+    setMembers([mem,...members])
+    setFormValues(initialFormValues)
+    
   }
   
   return (
@@ -32,7 +37,14 @@ function App() {
      update={update}
      submit={submit}
      />
+
+     {members.map(member => {
+       return (
+         <Member key={member.id} info={member}/>
+       )
+     })}
     </div>
+
   );
 }
 
